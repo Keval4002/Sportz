@@ -3,6 +3,7 @@ import { matchRouter } from './routes/matches.js';
 import 'dotenv/config'
 import {attachWebsocketServer} from './ws/server.js'
 import http from 'http'
+import { securityMiddleware } from './arcjet/arcjet.js';
 
 const app = express();
 
@@ -13,9 +14,12 @@ const server = http.createServer(app);
 
 app.use(express.json());
 
+app.use(securityMiddleware());
 app.get('/', (req, res)=>{
     console.log("Hello from express server");
+    res.status(200).json({message: "Server started."})
 });
+
 
 app.use('/matches', matchRouter);
 
