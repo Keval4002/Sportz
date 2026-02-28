@@ -143,3 +143,61 @@
 [28/2/2026 20:55:44] [INFO] Dependencies : {"@arcjet/inspect":"^1.1.0","@arcjet/node":"^1.1.0","apminsight":"^5.3.0","dotenv":"^17.3.1","drizzle-orm":"^0.45.1","express":"^5.2.1","http":"^0.0.1-security","nodemon":"^3.1.14","pg":"^8.18.0","ws":"^8.19.0","wscat":"^6.1.0","zod":"^4.3.6"} 
 [28/2/2026 20:55:44] [INFO]  No time limit restriction for response code ::911 
 [28/2/2026 20:55:44] [INFO] Application not hosted in Kubernetes. 
+[28/2/2026 20:55:46] [ERROR] HTTP request error: socket hang up 
+[28/2/2026 20:55:46] [ERROR] HTTP request error: socket hang up 
+[28/2/2026 20:55:46] [INFO] Application not hosted in AWS. 
+[28/2/2026 20:55:47] [ERROR] HTTP request error: socket hang up 
+[28/2/2026 20:55:47] [INFO] Application not hosted in Azure 
+[28/2/2026 20:55:47] [ERROR] HTTP request error: getaddrinfo ENOTFOUND metadata.google.internal 
+[28/2/2026 20:55:47] [INFO] Application not hosted in GCP 
+[28/2/2026 20:55:47] [ERROR] HTTP request error: socket hang up 
+[28/2/2026 20:55:47] [INFO] Application not hosted in docker. 
+[28/2/2026 20:55:47] [INFO] Application not hosted in AWS_Fargate 
+[28/2/2026 20:55:47] [INFO] intiating /arh/connect request to plusinsight.site24x7.in:443 
+[28/2/2026 20:55:48] [INFO] Response data for /arh/connect {"result":true,"data":{"response-code":911,"instance-info":{"instanceid":"2d30ee814d6984b9ae8ddbdbbe198abc"},"agent_specific_info":{"transaction.grouping":"","transaction.skip.patterns":"","webtransaction.trace.external.components.count.threshold":30,"bgtransaction.trace.threshold":5,"webtransaction.trace.request.headers.record":false,"normalize.dboperation":true,"bgtransaction.tracking.enabled":false,"transaction.grouping.by.position":"","transaction.keyword.skip.grouping":"","tags":"","webtransaction.trace.input.params.record":false,"bgtransaction.trace.enabled":false,"webtransaction.tracker.drop.threshold":10,"apminsight.log.level":"CRITICAL","exceptions.ignore":"","transaction.key.transactions":"","webtransaction.trace.request.headers.ignore":"X-Site24x7-Id, X-SITE24X7-RUM-APPKEY, X-SITE24X7-RUM-TRACEID, Site24x7SyntheticKey","transaction.skip.listening":"*.css, *.js, *.gif, *.jpg, *.jpeg, *.bmp, *.png, *.ico","application.group.name":"sportz_SmartGroup","http.errors.ignore":"","http.errors.track":"","transaction.prefix.grouping":""},"s247_cluster_name":7,"custom_config_info":{"transaction.trace.sql.parametrize":true,"down.alert.enabled":false,"suppress.instance.alerts":false,"cloud.instance.cleanup.threshold":7,"transaction.tracestore.size":30,"last.modified.time":1772291432643,"transaction.trace.threshold":2,"show.instance.port.number":true,"metricstore.bgmetric.bucket.size":100,"transaction.trace.enabled":true,"autoupgrade.enabled":false,"transaction.trace.sql.stacktrace.threshold":3,"transaction.tracking.request.interval":1,"metricstore.dbmetric.bucket.size":500,"metricstore.metric.bucket.size":250,"sql.capture.enabled":true,"apdex.threshold":0.5},"collector-info":{"port":"443","host":"plusinsight.site24x7.in"},"app_id":"4Pk2lGYrL7","config_info":{"transaction.trace.sql.parametrize":true,"down.alert.enabled":false,"suppress.instance.alerts":false,"transaction.grouping":"","cloud.instance.cleanup.threshold":7,"bgtransaction.trace.threshold":5,"bgtransaction.tracking.enabled":false,"transaction.keyword.skip.grouping":"","bgtransaction.trace.enabled":false,"autoupgrade.enabled":false,"exceptions.ignore":"","transaction.key.transactions":"","transaction.trace.sql.stacktrace.threshold":3,"application.group.name":"sportz_SmartGroup","http.errors.track":"","transaction.skip.patterns":"","last.modified.time":1772291432643,"transaction.trace.threshold":2,"webtransaction.trace.external.components.count.threshold":30,"webtransaction.trace.request.headers.record":false,"show.instance.port.number":true,"normalize.dboperation":true,"transaction.grouping.by.position":"","tags":"","transaction.trace.enabled":true,"webtransaction.trace.input.params.record":false,"webtransaction.tracker.drop.threshold":10,"apminsight.log.level":"CRITICAL","transaction.tracking.request.interval":1,"webtransaction.trace.request.headers.ignore":"X-Site24x7-Id, X-SITE24X7-RUM-APPKEY, X-SITE24X7-RUM-TRACEID, Site24x7SyntheticKey","transaction.skip.listening":"*.css, *.js, *.gif, *.jpg, *.jpeg, *.bmp, *.png, *.ico","http.errors.ignore":"","sql.capture.enabled":true,"apdex.threshold":0.5,"transaction.prefix.grouping":""}}}
+[28/2/2026 20:55:48] [CRITICAL] received response code : "MANAGE_AGENT"
+[28/2/2026 20:56:47] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 20:57:47] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 20:58:47] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 20:59:47] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:0:48] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:1:47] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:2:47] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:3:47] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:4:47] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:5:47] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:6:47] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:7:47] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:8:47] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:9:49] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:10:48] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:11:47] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:12:48] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 21:13:48] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 22:39:46] [ERROR] Error occured for in /arh/data request Error: All endpoints failed
+    at tryEndpoint (D:\Projects\Broadcast Engine\Sportz\node_modules\apminsight\lib\communication\reqhandler.js:13:16)
+    at D:\Projects\Broadcast Engine\Sportz\node_modules\apminsight\lib\communication\reqhandler.js:42:17
+    at ClientRequest.<anonymous> (D:\Projects\Broadcast Engine\Sportz\node_modules\apminsight\lib\communication\reqhandler.js:90:9)
+    at ClientRequest.emit (node:events:524:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:524:28)
+    at TLSSocket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+[28/2/2026 22:39:49] [ERROR] Error occured for in /arh/nvm request Error: All endpoints failed
+    at tryEndpoint (D:\Projects\Broadcast Engine\Sportz\node_modules\apminsight\lib\communication\reqhandler.js:13:16)
+    at D:\Projects\Broadcast Engine\Sportz\node_modules\apminsight\lib\communication\reqhandler.js:42:17
+    at ClientRequest.<anonymous> (D:\Projects\Broadcast Engine\Sportz\node_modules\apminsight\lib\communication\reqhandler.js:90:9)
+    at ClientRequest.emit (node:events:524:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:524:28)
+    at TLSSocket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+[28/2/2026 22:40:49] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 22:41:50] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 22:42:50] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 22:43:50] [CRITICAL] received empty response data for /arh/nvm request 
+[28/2/2026 22:44:50] [CRITICAL] received empty response data for /arh/nvm request 

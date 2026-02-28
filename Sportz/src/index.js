@@ -1,12 +1,14 @@
 import AgentAPI from 'apminsight';
 AgentAPI.config();
 import express from 'express'
+import cors from 'cors'
 import { matchRouter } from './routes/matches.js';
 import 'dotenv/config'
 import {attachWebsocketServer} from './ws/server.js'
 import http from 'http'
 import { securityMiddleware } from './arcjet/arcjet.js';
 import { commentaryRouter } from './routes/commentary.js';
+import { chatRouter } from './routes/chat.js';
 
 const app = express();
 
@@ -15,6 +17,7 @@ const HOST = process.env.HOST||'0.0.0.0';
 
 const server = http.createServer(app);
 
+app.use(cors());
 app.use(express.json());
 
 app.use(securityMiddleware());
@@ -26,11 +29,13 @@ app.get('/', (req, res)=>{
 
 app.use('/matches', matchRouter);
 app.use('/matches/:id/commentary', commentaryRouter);
+app.use('/matches/:id/chat', chatRouter);
 
 
-const {broadcastMatchCreated, broadcastCommentary} = attachWebsocketServer(server);
+const {broadcastMatchCreated, broadcastCommentary, broadcastChat} = attachWebsocketServer(server);
 app.locals.broadcastMatchCreated = broadcastMatchCreated;
 app.locals.broadcastCommentary = broadcastCommentary;
+app.locals.broadcastChat = broadcastChat;
 
 server.listen(PORT, ()=>{
     const baseUrl = HOST === '0.0.0.0'? `http://localhost:${PORT}` : `http://${HOST}:${PORT}`

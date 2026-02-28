@@ -29,3 +29,11 @@ export const commentary = pgTable("commentary",{
     tags: text('tags').array(),
     createdAt: timestamp('created_at').notNull().defaultNow(),
 })
+
+export const chatMessages = pgTable("chat_messages", {
+    id: serial('id').primaryKey(),
+    matchId: integer('match_id').notNull().references(() => matches.id),
+    author: text('author').notNull(),
+    message: text('message').notNull(),
+    createdAt: timestamp('created_at').notNull().defaultNow(),
+})

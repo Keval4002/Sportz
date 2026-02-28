@@ -152,6 +152,10 @@ export function attachWebsocketServer(server){
         broadcastToMatch(matchId, {type: 'commentary', data: comment});
     }
 
-    return {broadcastMatchCreated, broadcastCommentary};
+    function broadcastChat(matchId, chatMessage){
+        broadcastToMatch(matchId, {type: 'chat_message', data: chatMessage});
+    }
+
+    return {broadcastMatchCreated, broadcastCommentary, broadcastChat};
 }
 
