@@ -29,8 +29,8 @@ matchRouter.get('/', async (req, res)=>{
 
 matchRouter.post('/', async (req, res)=>{
     const parsed = createMatchSchema.safeParse(req.body);
-    console.log("BODY:", req.body);
-    console.log(parsed);
+    // console.log("BODY:", req.body);
+    // console.log(parsed);
 
 
     if(!parsed.success){

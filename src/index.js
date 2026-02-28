@@ -1,9 +1,12 @@
+import AgentAPI from 'apminsight';
+AgentAPI.config();
 import express from 'express'
 import { matchRouter } from './routes/matches.js';
 import 'dotenv/config'
 import {attachWebsocketServer} from './ws/server.js'
 import http from 'http'
 import { securityMiddleware } from './arcjet/arcjet.js';
+import { commentaryRouter } from './routes/commentary.js';
 
 const app = express();
 
@@ -22,9 +25,12 @@ app.get('/', (req, res)=>{
 
 
 app.use('/matches', matchRouter);
+app.use('/matches/:id/commentary', commentaryRouter);
 
-const {broadcastMatchCreated} = attachWebsocketServer(server);
+
+const {broadcastMatchCreated, broadcastCommentary} = attachWebsocketServer(server);
 app.locals.broadcastMatchCreated = broadcastMatchCreated;
+app.locals.broadcastCommentary = broadcastCommentary;
 
 server.listen(PORT, ()=>{
     const baseUrl = HOST === '0.0.0.0'? `http://localhost:${PORT}` : `http://${HOST}:${PORT}`

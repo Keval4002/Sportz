@@ -15,17 +15,17 @@ export const matches = pgTable("matches",{
     createdAt: timestamp('created_at').notNull().defaultNow(), 
 })
 
-export const commentry = pgTable("commentry",{
+export const commentary = pgTable("commentary",{
     id: serial('id').primaryKey(), 
     matchId: integer('match_id').notNull().references(()=>matches.id),
-    minute: integer('minute'),
+    minutes: integer('minutes'),
     sequence: integer('sequence'),
     period: text('period'),
     eventType: text('event_type'),
     actor: text('actor'),
     team: text('team'),
     message: text('message').notNull(),
-    metadate: jsonb('metadata'),
-    tags: text('tage').array(),
+    metadata: jsonb('metadata'),
+    tags: text('tags').array(),
     createdAt: timestamp('created_at').notNull().defaultNow(),
 })

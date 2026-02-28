@@ -1,8 +1,8 @@
 CREATE TYPE "public"."match_status" AS ENUM('scheduled', 'live', 'finished');--> statement-breakpoint
-CREATE TABLE "commentry" (
+CREATE TABLE "commentary" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"match_id" integer NOT NULL,
-	"minute" integer,
+	"minutes" integer,
 	"sequence" integer,
 	"period" text,
 	"event_type" text,
@@ -10,7 +10,7 @@ CREATE TABLE "commentry" (
 	"team" text,
 	"message" text NOT NULL,
 	"metadata" jsonb,
-	"tage" text[],
+	"tags" text[],
 	"created_at" timestamp DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
@@ -27,4 +27,4 @@ CREATE TABLE "matches" (
 	"created_at" timestamp DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
-ALTER TABLE "commentry" ADD CONSTRAINT "commentry_match_id_matches_id_fk" FOREIGN KEY ("match_id") REFERENCES "public"."matches"("id") ON DELETE no action ON UPDATE no action;
+ALTER TABLE "commentary" ADD CONSTRAINT "commentary_match_id_matches_id_fk" FOREIGN KEY ("match_id") REFERENCES "public"."matches"("id") ON DELETE no action ON UPDATE no action;
