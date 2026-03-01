@@ -1,5 +1,8 @@
 /**
- * Global configuration derived from environment.
+ * Global configuration derived from environment variables.
+ * 
+ * All environment variables are defined in the .env file.
+ * See .env.example for a complete list and descriptions.
  *
  * Three modes:
  * 1. SIMULATION_MODE=true  → Pure offline simulation (no backend)
@@ -27,7 +30,7 @@ export const WS_URL: string =
     ? `${window.location.protocol === "https:" ? "wss:" : "ws:"}//${window.location.host}/ws`
     : "");
 
-/** REST API base path */
+/** REST API base path (configured via VITE_API_BASE) */
 export const API_BASE: string =
   (import.meta.env.VITE_API_BASE as string) || "/api";
 
