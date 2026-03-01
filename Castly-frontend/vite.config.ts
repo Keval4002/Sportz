@@ -9,12 +9,15 @@ export default defineConfig(({ mode }) => {
   
   const backendUrl = env.VITE_BACKEND_URL || 'http://localhost:8000'
   const devPort = parseInt(env.VITE_DEV_PORT || '3000', 10)
+  const isLocalBackend = backendUrl.includes('localhost') || backendUrl.includes('127.0.0.1')
   
   return {
     plugins: [react(), tailwindcss()],
     server: {
       port: devPort,
-      proxy: {
+      // Only use proxy for local backend development
+      // For production backend, frontend connects directly (no proxy needed)
+      proxy: isLocalBackend ? {
         '/api': {
           target: backendUrl,
           changeOrigin: true,
@@ -24,7 +27,7 @@ export default defineConfig(({ mode }) => {
           target: backendUrl.replace(/^http/, 'ws'),
           ws: true,
         },
-      },
+      } : undefined,
     },
   }
 })

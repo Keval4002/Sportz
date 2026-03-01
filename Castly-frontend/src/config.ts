@@ -21,18 +21,48 @@ export const OFFLINE_MODE = SIMULATION_MODE;
 
 /**
  * WebSocket URL.
- * If VITE_WS_URL is set, use it directly.
- * Otherwise auto-derive from window.location (works with Vite proxy).
+ * Automatically derives from VITE_BACKEND_URL in production,
+ * or from window.location in development (works with Vite proxy).
  */
-export const WS_URL: string =
-  (import.meta.env.VITE_WS_URL as string) ||
-  (typeof window !== "undefined"
-    ? `${window.location.protocol === "https:" ? "wss:" : "ws:"}//${window.location.host}/ws`
-    : "");
+export const WS_URL: string = (() => {
+  const backendUrl = import.meta.env.VITE_BACKEND_URL as string;
+  
+  // If BACKEND_URL is set and looks like a full URL, derive WebSocket from it
+  if (backendUrl && (backendUrl.startsWith('http://') || backendUrl.startsWith('https://'))) {
+    const wsUrl = backendUrl.replace(/^http/, 'ws') + '/ws';
+    return wsUrl;
+  }
+  
+  // Otherwise auto-derive from window.location (development with Vite proxy)
+  if (typeof window !== "undefined") {
+    return `${window.location.protocol === "https:" ? "wss:" : "ws:"}//${window.location.host}/ws`;
+  }
+  
+  return "";
+})();
 
-/** REST API base path (configured via VITE_API_BASE) */
-export const API_BASE: string =
-  (import.meta.env.VITE_API_BASE as string) || "/api";
+/**
+ * REST API base URL.
+ * In development: Uses "/api" (Vite proxy handles routing to backend)
+ * In production: Uses VITE_BACKEND_URL directly (no proxy)
+ */
+export const API_BASE: string = (() => {
+  const apiBase = import.meta.env.VITE_API_BASE as string;
+  const backendUrl = import.meta.env.VITE_BACKEND_URL as string;
+  
+  // If API_BASE is explicitly set and not empty, use it (development with proxy)
+  if (apiBase && apiBase.trim() !== "") {
+    return apiBase;
+  }
+  
+  // If BACKEND_URL is a full URL, use it directly (production, no proxy)
+  if (backendUrl && (backendUrl.startsWith('http://') || backendUrl.startsWith('https://'))) {
+    return backendUrl;
+  }
+  
+  // Default fallback
+  return "/api";
+})();
 
 /**
  * Milliseconds per match minute.

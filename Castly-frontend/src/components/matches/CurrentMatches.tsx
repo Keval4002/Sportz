@@ -159,7 +159,7 @@ export function CurrentMatches() {
               {tab.label}
               {counts[tab.value] > 0 && (
                 <span
-                  className={`ml-1 inline-flex h-4 min-w-[16px] items-center justify-center rounded-full px-1 text-[9px] font-bold ${
+                  className={`ml-1 inline-flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[9px] font-bold ${
                     filter === tab.value
                       ? "bg-sky-100 text-sky-600"
                       : "bg-slate-100 text-slate-400"
